@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "Hanken Grotesk", sans-serif;
+
+  --color-background: #081425;
+  --color-on-background: #d8e3fb;
+  --color-primary: #adc6ff;
+  --color-on-primary: #002e69;
+  --color-primary-container: #4b8eff;
+  --color-on-primary-container: #00285c;
+  --color-secondary: #b9c8de;
+  --color-on-secondary: #233143;
+  --color-secondary-container: #39485a;
+  --color-on-secondary-container: #a7b6cc;
+  --color-tertiary: #bec6e0;
+  --color-on-tertiary: #283044;
+  --color-tertiary-container: #8990a8;
+  --color-on-tertiary-container: #22293d;
+  --color-surface: #081425;
+  --color-on-surface: #d8e3fb;
+  --color-surface-variant: #2a3548;
+  --color-on-surface-variant: #c1c6d7;
+  --color-surface-container-lowest: #040e1f;
+  --color-surface-container-low: #111c2d;
+  --color-surface-container: #152031;
+  --color-surface-container-high: #1f2a3c;
+  --color-surface-container-highest: #2a3548;
+  --color-surface-bright: #2f3a4c;
+  --color-surface-dim: #081425;
+  --color-inverse-surface: #d8e3fb;
+  --color-inverse-on-surface: #263143;
+  --color-inverse-primary: #005bc1;
+  --color-outline: #8b90a0;
+  --color-outline-variant: #414755;
+  --color-error: #ffb4ab;
+  --color-on-error: #690005;
+  --color-error-container: #93000a;
+  --color-on-error-container: #ffdad6;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-on-background);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+}
+
+/* Custom design system utilities */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+}
+
+.technical-border {
+  position: relative;
+}
+
+.technical-border::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 20px;
+  height: 20px;
+  border-top: 2px solid var(--color-primary);
+  border-left: 2px solid var(--color-primary);
+  pointer-events: none;
+}
+
+.technical-border::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  width: 20px;
+  height: 20px;
+  border-bottom: 2px solid var(--color-primary);
+  border-right: 2px solid var(--color-primary);
+  pointer-events: none;
+}
+
+.micro-grid {
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, rgba(65, 71, 85, 0.1) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(65, 71, 85, 0.1) 1px, transparent 1px);
+}
+
+.technical-grid {
+  background-image: radial-gradient(circle, rgba(173, 198, 255, 0.1) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.glass-card {
+  background: rgba(21, 32, 49, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(139, 144, 160, 0.2);
+}
+
+.glass-effect {
+  backdrop-filter: blur(10px);
+  background: rgba(21, 32, 49, 0.85);
+}
+
+.circuit-node {
+  position: relative;
+}
+
+.circuit-node::before {
+  content: '+';
+  position: absolute;
+  left: -1.2rem;
+  color: var(--color-primary);
+  font-family: var(--font-mono);
+}
+
+.scanline {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--color-primary-container), transparent);
+  position: absolute;
+  top: 0;
+  animation: scan 6s linear infinite;
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+@keyframes scan {
+  from { top: 0%; }
+  to { top: 100%; }
+}
+
+/* Scroll Hide */
+.scroll-hide::-webkit-scrollbar {
+  display: none;
+}
+.scroll-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

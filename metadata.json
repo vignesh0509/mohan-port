@@ -1,0 +1,6 @@
+{
+  "name": "Mohan Krishna EEE Portfolio",
+  "description": "A high-tech interactive engineering portfolio and admin console designed for Mohan Krishna K, featuring hardware projects, live timeline, and administrative panels.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
